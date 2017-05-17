@@ -26,10 +26,13 @@
     <p>@property.Description</p>
     if (property.OfferStatus != null)
     {
-        <strong class="text-info">Offer is : @property.OfferStatus</strong>        
+        <strong class="text-info">Offer is : @property.OfferStatus</strong>
     }
     else
     {
+        <a href="@Url.Action("BookViewing", "Property", new { id = property.Id })" class="btn btn-primary">
+            Book Viewing
+        </a>
         <a href="@Url.Action("MakeOffer", "Property", new { id = property.Id })" class="btn btn-primary">
             Make Offer
         </a>

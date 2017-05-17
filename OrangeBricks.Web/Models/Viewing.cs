@@ -15,9 +15,15 @@ namespace OrangeBricks.Web.Models
         public string Phone { get; set; }
 
         [Required]
+        public string Email { get; set; }
+
+        [Required]
         public DateTime CreatedAt { get; set; }
 
         [Required]
         public string BuyerUserId { get; set; }
+
+        [Required]
+        public DateTime BookingTime { get; set; }
     }
 }
