@@ -108,12 +108,14 @@ namespace OrangeBricks.Web.Controllers.Property
         [OrangeBricksAuthorize(Roles = "Buyer")]
         public ActionResult BookViewing(BookViewingCommand command)
         {
-            var handler = new BookViewingCommandHandler(_context);
+            if (ModelState.IsValid)
+            {
+                var handler = new BookViewingCommandHandler(_context);
 
-            command.BuyerUserId = User.Identity.GetUserId();
+                command.BuyerUserId = User.Identity.GetUserId();
 
-            handler.Handle(command);
-
+                handler.Handle(command);
+            }            
             return RedirectToAction("Index");
         }
     }

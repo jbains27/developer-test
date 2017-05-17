@@ -21,6 +21,7 @@ namespace OrangeBricks.Web.Controllers.Property.Commands
             {                
                 Name = command.Name,
                 Phone = command.Phone,
+                Email = command.Email,
                 BookingTime = command.BookingTime,
                 CreatedAt = DateTime.Now,                
                 BuyerUserId = command.BuyerUserId
