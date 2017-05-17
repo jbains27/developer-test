@@ -232,6 +232,14 @@
     <Compile Include="Migrations\201705141935156_AddBuyerIdToOffer.Designer.cs">
       <DependentUpon>201705141935156_AddBuyerIdToOffer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705170309596_AddViewingTable.cs" />
+    <Compile Include="Migrations\201705170309596_AddViewingTable.Designer.cs">
+      <DependentUpon>201705170309596_AddViewingTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705170311148_AddViewingRelationship.cs" />
+    <Compile Include="Migrations\201705170311148_AddViewingRelationship.Designer.cs">
+      <DependentUpon>201705170311148_AddViewingRelationship.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -240,6 +248,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Offer.cs" />
     <Compile Include="Models\Property.cs" />
+    <Compile Include="Models\Viewing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -330,6 +339,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705141935156_AddBuyerIdToOffer.resx">
       <DependentUpon>201705141935156_AddBuyerIdToOffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705170309596_AddViewingTable.resx">
+      <DependentUpon>201705170309596_AddViewingTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705170311148_AddViewingRelationship.resx">
+      <DependentUpon>201705170311148_AddViewingRelationship.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
