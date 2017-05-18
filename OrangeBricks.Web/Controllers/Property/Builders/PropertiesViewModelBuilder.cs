@@ -20,11 +20,12 @@ namespace OrangeBricks.Web.Controllers.Property.Builders
         {
             var properties = _context.Properties
                 .Where(p => p.IsListedForSale)
-                .Include(x => x.Offers);
+                .Include(x => x.Offers)
+                .Include(v => v.Viewings);
 
             if (!string.IsNullOrWhiteSpace(query.Search))
             {
-                properties = properties.Where(x => x.StreetName.Contains(query.Search) 
+                properties = properties.Where(x => x.StreetName.Contains(query.Search)
                     || x.Description.Contains(query.Search));
             }
 
@@ -41,7 +42,8 @@ namespace OrangeBricks.Web.Controllers.Property.Builders
         private static PropertyViewModel MapViewModel(Models.Property property, string userId)
         {
             var offers = property.Offers?.Where(x => x.BuyerUserId == userId).FirstOrDefault();
-                        
+            var viewing = property.Viewings?.Where(x => x.BuyerUserId == userId).FirstOrDefault();
+
             return new PropertyViewModel
             {
                 Id = property.Id,
@@ -49,7 +51,9 @@ namespace OrangeBricks.Web.Controllers.Property.Builders
                 Description = property.Description,
                 NumberOfBedrooms = property.NumberOfBedrooms,
                 PropertyType = property.PropertyType,
-                OfferStatus = offers?.Status.ToString()               
+                OfferStatus = offers?.Status.ToString(),
+                HasViewing = viewing != null ? true : false,
+                ViewingDateTime = viewing?.BookingTime.ToShortDateString()
             };
         }
     }

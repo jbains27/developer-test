@@ -26,7 +26,15 @@
     <p>@property.Description</p>
     if (property.OfferStatus != null)
     {
-        <strong class="text-info">Offer is : @property.OfferStatus</strong>
+        <div class="alert alert-info" role="alert">
+            <strong>Offer is : @property.OfferStatus</strong>
+        </div>
+    }
+    else if (property.HasViewing)
+    {
+        <div class="alert alert-info" role="alert">
+            <strong>Viewing Booked for : @property.ViewingDateTime</strong>
+        </div>
     }
     else
     {
